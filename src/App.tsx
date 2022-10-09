@@ -3,6 +3,8 @@ import styled, {keyframes} from "styled-components";
 const First = styled.div`
 display: flex;
 flex-direction:column;
+background-color: ${(props) => props.theme.backgroundColor};
+
 `;
 
 const rotateBox = keyframes`
@@ -28,7 +30,12 @@ transform: rotateX(360deg) translateX(100px);
 `
 const Emoji = styled.span`font-size: 20px`;
 
-const Box = styled.div`
+interface Props{
+  bgColor?: string,
+  bdrd?: string
+}
+
+const Box = styled.div<Props>`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -39,13 +46,12 @@ border-radius: ${(props) => props.bdrd};
 animation: ${rotateBox} 2s linear infinite;
 
 ${Emoji}{
- 
   &:hover{
     font-size: 100px;
   }
-}
+} 
 `;
-
+// Emoji 는 오직 Box의 자식일 때만 적용
 const Text = styled.span`
 color: white;
 `;
@@ -58,6 +64,7 @@ width: 200px;
 height: 100px;
 color: white;
 background-color: tomato;
+color: ${(props) => props.theme.textColor};
 `;
 
 const Input = styled.input.attrs({required:true, minLength:10})`
@@ -67,6 +74,7 @@ height: 100px;
 `;
 
 function App() {
+
   return (
    <First as="header">
     <Box bdrd="10px" bgColor="teal">
@@ -75,7 +83,7 @@ function App() {
     <Box bdrd="20px" bgColor="teal"><Emoji as="p">Box</Emoji></Box>
     <Box bdrd="20px" bgColor="teal"><Emoji as="h1">Box</Emoji></Box>
     <Circle bdrd="50%" bgColor="tomato"></Circle>
-    <Btn>Log-in</Btn>
+    <Btn><Emoji>Log-in</Emoji></Btn>
     <Btn as="a" href="/">Log-in</Btn>
     <div>
    <Input />
