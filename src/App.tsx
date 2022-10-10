@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components";
+import Ellipse from "./Ellipse";
 
 const First = styled.div`
 display: flex;
@@ -31,8 +32,8 @@ transform: rotateX(360deg) translateX(100px);
 const Emoji = styled.span`font-size: 20px`;
 
 interface Props{
-  bgColor?: string,
-  bdrd?: string
+  bgColor: string,
+  bdrd: string
 }
 
 const Box = styled.div<Props>`
@@ -90,6 +91,7 @@ function App() {
    <Input />
    <Input />
    </div>
+   <Ellipse txtColor="brown" />
    </First>
   );
 }
