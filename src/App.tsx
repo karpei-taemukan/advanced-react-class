@@ -5,7 +5,7 @@ const First = styled.div`
 display: flex;
 flex-direction:column;
 background-color: ${(props) => props.theme.backgroundColor};
-
+gap:20px;
 `;
 
 const rotateBox = keyframes`
@@ -91,7 +91,8 @@ function App() {
    <Input />
    <Input />
    </div>
-   <Ellipse txtColor="brown" />
+   <Ellipse borderColor="white" txtColor="brown" />
+   <Ellipse txtColor="black" text="?????" />
    </First>
   );
 }

@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-interface txtProps{
+interface EllipseProps{
     txtColor: string;
+    borderColor?: string;
+    text?:string;
 }
 
-const Container = styled.div<txtProps>`
+interface ContainerProps{ /*Container의 속성에서 필요할때 작성 */ 
+    txtColor: string;
+    borderColor: string;
+}
+
+const Container = styled.div<ContainerProps>`
 width: 200px;
 height: 100px;
 background-color:green;
@@ -13,13 +20,14 @@ color: ${props => props.txtColor};
 display: flex;
 justify-content: center;
 align-items: center;
+border: 5px dotted ${props => props.borderColor};
 `;
 
 
 
-function Ellipse({txtColor}:txtProps){ /*(props:txtProps)        txtColor={props.txtColor} */ 
+function Ellipse({txtColor, borderColor, text="Ellipse"}:EllipseProps){ /*(props:txtProps)        txtColor={props.txtColor} */ 
 return <div>
-<Container txtColor={txtColor}>Ellipse</Container>
+<Container txtColor={txtColor} borderColor={borderColor ?? "red"}>{text}</Container>
 </div>
 }
 
