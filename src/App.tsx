@@ -31,7 +31,7 @@ transform: rotateX(360deg) translateX(100px);
 `
 const Emoji = styled.span`font-size: 20px`;
 
-interface Props{
+interface Props{ // interface란 : object shape을 typescript에게 설먕해주는 방법
   bgColor: string,
   bdrd: string
 }
@@ -56,9 +56,44 @@ ${Emoji}{
 const Text = styled.span`
 color: white;
 `;
- 
 
-const Circle = styled(Box)``;
+const BoxCircle = styled(Box)``;
+
+const changeBackground = keyframes`
+0%{
+transform: Scale(0) translateX(0px) rotateZ(0deg);
+background-color: #F73541;
+color: #F2FF06;
+}
+25%{
+  transform: Scale(1.5) translateX(100px) rotateZ(90deg);
+}
+50%{
+  transform: Scale(2) translateX(200px) rotateZ(180deg);
+  background-color: #E60BC5;
+  color: #FD7701;
+}
+75%{
+  transform: Scale(1.5) translateX(300px) rotateZ(270deg);
+}
+100%{
+  transform: Scale(0) translateX(400px) rotateZ(360deg);
+  background-color: #00F8E7;
+  color: #06EA06;
+}
+`
+
+const Circle = styled.div`
+width: 100px;
+height: 100px;
+background-color: tomato;
+border-radius:50px;
+line-height: 100px;
+text-align: center;
+&:active{
+animation: ${changeBackground} 3s linear infinite;
+}
+`;
 
 const Btn = styled.button`
 width: 200px;
@@ -83,7 +118,8 @@ function App() {
     </Box>
     <Box bdrd="20px" bgColor="teal"><Emoji as="p">Box</Emoji></Box>
     <Box bdrd="20px" bgColor="teal"><Emoji as="h1">Box</Emoji></Box>
-    <Circle bdrd="50%" bgColor="tomato"></Circle>
+    <BoxCircle bdrd="50%" bgColor="tomato"></BoxCircle>
+    <Circle><Emoji>CIRCLE</Emoji></Circle>
     <Btn><Emoji>Log-in</Emoji></Btn>
     <Btn as="a" href="/">Log-in</Btn>
     <div>
