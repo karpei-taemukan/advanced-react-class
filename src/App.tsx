@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components";
 import Ellipse from "./Ellipse";
+import Form from "./Form";
 
 const First = styled.div`
 display: flex;
@@ -129,6 +130,7 @@ function App() {
    </div>
    <Ellipse borderColor="white" txtColor="brown" />
    <Ellipse txtColor="black" text="?????" />
+   <Form />
    </First>
   );
 }

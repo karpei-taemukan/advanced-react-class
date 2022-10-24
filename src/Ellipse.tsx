@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 interface EllipseProps{
@@ -26,6 +27,7 @@ border: 5px dotted ${props => props.borderColor};
 
 
 function Ellipse({txtColor, borderColor, text="Ellipse"}:EllipseProps){ /*(props:txtProps)        txtColor={props.txtColor} */ 
+//const [value, setValue] = useState<number|string>(0);
 return <div>
 <Container txtColor={txtColor} borderColor={borderColor ?? "red"}>{text}</Container>
 </div>
