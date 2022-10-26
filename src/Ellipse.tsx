@@ -24,13 +24,13 @@ align-items: center;
 border: 5px dotted ${props => props.borderColor};
 `;
 
-
+const H1 = styled.h1``;
 
 function Ellipse({txtColor, borderColor, text="Ellipse"}:EllipseProps){ /*(props:txtProps)        txtColor={props.txtColor} */ 
 //const [value, setValue] = useState<number|string>(0);
-return <div>
-<Container txtColor={txtColor} borderColor={borderColor ?? "red"}>{text}</Container>
+return (<div>
+<Container txtColor={txtColor} borderColor={borderColor ?? "red"}><H1>{text}</H1></Container>
 </div>
-}
+)}
 
 export default Ellipse;
