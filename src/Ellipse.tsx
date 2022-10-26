@@ -24,7 +24,9 @@ align-items: center;
 border: 5px dotted ${props => props.borderColor};
 `;
 
-const H1 = styled.h1``;
+const H1 = styled.h1`
+color: ${props => props.theme.textColor}
+`;
 
 function Ellipse({txtColor, borderColor, text="Ellipse"}:EllipseProps){ /*(props:txtProps)        txtColor={props.txtColor} */ 
 //const [value, setValue] = useState<number|string>(0);
