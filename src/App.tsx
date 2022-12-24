@@ -1,6 +1,9 @@
+
+import { Outlet } from "react-router-dom";
 import styled, {keyframes} from "styled-components";
 import Ellipse from "./Ellipse";
 import Form from "./Form";
+import Router from "./Router";
 
 const First = styled.div`
 display: flex;
@@ -131,8 +134,13 @@ function App() {
    <Ellipse borderColor="white" txtColor="brown" />
    <Ellipse txtColor="black" text="?????" />
    <Form />
+   <div>
+    <Outlet />
+   </div>
    </First>
   );
 }
 
 export default App;
+
+//  <Outlet />은 Rotuer.tsx에 있는 children의 element를 렌더링하게 해준다
