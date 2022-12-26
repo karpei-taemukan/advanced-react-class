@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import { users } from "../db";
 
 function Home(){
+    const [readSearchParams, setSearchParams] = useSearchParams();
+
     return (
     <>
     <Header />
