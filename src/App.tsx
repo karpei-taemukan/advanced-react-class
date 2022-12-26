@@ -134,13 +134,10 @@ function App() {
    <Ellipse borderColor="white" txtColor="brown" />
    <Ellipse txtColor="black" text="?????" />
    <Form />
-   <div>
-    <Outlet />
-   </div>
+ 
    </First>
   );
 }
 
 export default App;
 
-//  <Outlet />은 Rotuer.tsx에 있는 children의 element를 렌더링하게 해준다
